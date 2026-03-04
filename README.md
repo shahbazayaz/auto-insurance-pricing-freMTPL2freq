@@ -1,8 +1,10 @@
-# Auto Insurance Pricing Model with GLM
+# Auto Insurance Pricing Model using GLMs
 
-A comprehensive actuarial pricing model for auto insurance using French motor claims data. This project implements a two-part Generalized Linear Model (GLM) approach to calculate pure premiums by modeling claim frequency and severity separately.
+This project develops a two-part actuarial pricing model using French motor claims data. The objective is to estimate the pure premium (expected annual claim cost) by separately modeling claim frequency and claim severity using Generalized Linear Models (GLMs).
 
-## 📋 Overview
+The modeling framework follows standard actuarial pricing methodology.
+
+## Overview
 
 This project predicts **pure premium pricing** for auto insurance using real French motor claims data from the `freMTPL2freq` and `freMTPL2sev` datasets. The core methodology follows industry-standard actuarial practice:
 
@@ -10,16 +12,15 @@ This project predicts **pure premium pricing** for auto insurance using real Fre
 2. **Severity Model** – How large will claims be? (Gamma GLM with log link)
 3. **Pure Premium** – Expected annual cost = Frequency × Severity
 
-## 🎯 Key Features
+## Key Features
 
 - **Two-stage GLM modeling** following actuarial best practices
 - **Comprehensive model validation** including lift charts and segment calibration
 - **Diagnostic analysis** for overdispersion and distributional assumptions
 - **Business-focused interpretations** with practical pricing recommendations
-- **Comparative analysis** with Tweedie models
 - **Segment-specific calibration** to identify cross-subsidies
 
-## 📊 Dataset
+## Dataset
 
 The data originates from French motor claims and includes:
 
@@ -35,6 +36,19 @@ The data originates from French motor claims and includes:
 | `VehBrand` | Vehicle brand category |
 | `VehGas` | Fuel type (Regular/Diesel) |
 | `Region` | French administrative region |
+
+## Limitations & Future Improvements
+
+- Assumes independence between frequency and severity
+- No interaction terms included
+- Could extend using machine learning comparison
+
+## Actuarial Concepts Utilized
+- Exposure-based rate modeling
+- Poisson process assumption for claim frequency
+- Gamma modeling for positively skewed severity
+- Risk-based pricing framework
+- Interpretation of GLM coefficients in insurance context
 
 **Source**: [HuggingFace - freMTPL2 Dataset](https://huggingface.co/datasets/mabilton/fremtpl2)
 
