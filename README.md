@@ -40,6 +40,7 @@ The data originates from French motor claims and includes:
 ## Limitations & Future Improvements
 
 - Assumes independence between frequency and severity
+- Loading Factors applied according to Customer Behaviour within each risk segment
 - No interaction terms included
 - Could extend using machine learning comparison
 
